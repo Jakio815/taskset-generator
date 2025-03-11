@@ -11,6 +11,9 @@ Python >= 3.7.13
 ## How to Install prerequisties
 * Set the environment variable LF_PATH to the path where Lingua Franca is installed  
   (You can check by using a command `echo $LF_PATH`)
+```
+export LF_PATH=$(pwd)/lingua-franca
+```
 
 * Install python libraries
 ```
@@ -19,13 +22,14 @@ pip3 install numpy scipy matplotlib pyqt5
 
 for MacOS users, 
 ```
-brew install pyqt
+brew install pyqt@5 python-matplotlib
 ```
 
 ## How to use
 
 1. Execute python GUI
 ```
+cd src
 python3 gui.py
 ```
 
