@@ -126,7 +126,7 @@ class PlotGenerator(object):
         filename = filename = filepath.split('/')[-1].split('.')[0]
         binpath = f"{'/'.join(filepath.split('/')[:-3])}/bin/{filename}"
 
-        out = subprocess.run(['lfc', filepath], capture_output=True)
+        out = subprocess.run(['build/install/lf-cli/bin/lfc', filepath], capture_output=True)
         built_success = False
         
         print(out.stdout.decode('utf-8'))
