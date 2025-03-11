@@ -12,8 +12,8 @@ target C {
 
 preamble {=
     #include "platform.h"
-    int deadline_miss = 0;
-    int total_reactions_triggered = 0;
+    int deadline_miss;
+    int total_reactions_triggered;
 =}
 
 reactor TaskWithoutDeadline(id:int=0, release_time:time=0 sec, total_time:time=1 sec, exe_time: time=10 msec, periodic:bool=false, period:time=20 msec, deadline_time:time=15 msec) {
@@ -126,7 +126,10 @@ reactor BasicRunner {
 }
 
 main reactor {
-
+    preamble {=
+        int deadline_miss = 0;
+        int total_reactions_triggered = 0;
+    =}
     runner = new BasicRunner();
 
 $TASKCONFIG$

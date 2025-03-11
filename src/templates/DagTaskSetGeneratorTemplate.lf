@@ -10,7 +10,7 @@ target C {
 
 preamble {=
     #include "platform.h";
-    int deadline_miss = 0;
+    int deadline_miss;
 =}
 
 reactor SimpleDagRunner(exe_time:time=200 msec) {
@@ -37,6 +37,9 @@ reactor Component {
 }
 
 main reactor {
+    preamble {=
+        int deadline_miss = 0;
+    =}
     runner = new SimpleDagRunner(exe_time=$EXE_TIME$);
 
     $TASKCONFIG$
