@@ -112,6 +112,7 @@ reactor TaskWithDeadline(id:int=0, release_time:time=0 sec, total_time:time=1 se
             self->id,
             lf_time_physical_elapsed());
     =} deadline(deadline_time) {=
+        long long int physical_start_time = lf_time_physical();
         lf_atomic_fetch_add(&deadline_miss, 1);
         while(lf_time_physical() < physical_start_time + self->exe_time) {};
     =}
