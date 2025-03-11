@@ -13,7 +13,7 @@ preamble {=
     int deadline_miss = 0;
 =}
 
-reactor SimpleDagRunner(exe_time:time(200 msec)) {
+reactor SimpleDagRunner(exe_time:time=200 msec) {
 
     $STARTOUTPUT$
 

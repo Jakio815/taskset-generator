@@ -16,7 +16,7 @@ preamble {=
     int total_reactions_triggered = 0;
 =}
 
-reactor TaskWithoutDeadline(id:int(0), release_time:time(0 sec), total_time:time(1 sec), exe_time: time(10 msec), periodic:bool(false), period:time(20 msec)) {
+reactor TaskWithoutDeadline(id:int=0, release_time:time=0 sec, total_time:time=1 sec, exe_time: time=10 msec, periodic:bool=false, period:time=20 msec) {
     input in:int;
     output out:int;
     logical action release;
@@ -67,7 +67,7 @@ reactor TaskWithoutDeadline(id:int(0), release_time:time(0 sec), total_time:time
     =} 
 }
 
-reactor TaskWithDeadline(id:int(0), release_time:time(0 sec), total_time:time(1 sec), exe_time: time(10 msec), periodic:bool(false), period:time(20 msec), deadline_time:time(15 msec)) {
+reactor TaskWithDeadline(id:int=0, release_time:time=0 sec, total_time:time=1 sec, exe_time: time=10 msec, periodic:bool=false, period:time=20 msec, deadline_time:time=15 msec) {
     input in:int;
     output out:int;
     logical action release;
